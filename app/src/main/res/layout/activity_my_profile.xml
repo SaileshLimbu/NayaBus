@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.MyProfileActivity">
+
+    <data>
+        <variable
+            name="user"
+            type="np.com.nayabus.models.User" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/_16sdp"
+            android:background="@color/colorWhite"
+            android:layout_below="@id/toolbar"
+            android:paddingRight="@dimen/_16sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:src="@drawable/ic_home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/drawable_round"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_coin"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/textView3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/quicksand_medium"
+                            android:text="BALANCE"
+                            android:textColor="@color/colorDarkGray"
+                            android:textSize="@dimen/_9sdp" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView3"
+                            android:fontFamily="@font/quicksand_medium"
+                            android:text="Rs."
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/_9sdp" />
+
+                        <TextView
+                            android:id="@+id/etBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView3"
+                            android:layout_marginStart="3dp"
+                            android:layout_toRightOf="@id/textView"
+                            android:fontFamily="@font/quicksand_medium"
+                            tools:text="0.00"
+                            android:text="@{Integer.toString(user.balance)}"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/_9sdp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorGray"
+                android:text="NAME"
+                android:textSize="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/quicksand_medium"/>
+
+            <TextView
+                android:id="@+id/etFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDarkGray"
+                tools:text="sailesh limbu"
+                android:text="@{user.fullName}"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/quicksand_medium"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ddd"
+                android:layout_marginTop="@dimen/_8sdp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorGray"
+                android:text="EMAIL"
+                android:textSize="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/quicksand_medium"/>
+
+            <TextView
+                android:id="@+id/etEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDarkGray"
+                tools:text="saileshlimbu04@gmail.com"
+                android:text="@{user.email}"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/quicksand_medium"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ddd"
+                android:layout_marginTop="@dimen/_8sdp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorGray"
+                android:text="PHONE NUMBER"
+                android:textSize="@dimen/_9sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/quicksand_medium"/>
+
+            <TextView
+                android:id="@+id/etPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorDarkGray"
+                tools:text="9811317728"
+                android:text="@{user.phoneNumber}"
+                android:textSize="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="@font/quicksand_medium"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ddd"
+                android:layout_marginTop="@dimen/_8sdp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#ccc"
+            android:layout_alignTop="@id/btnEditProfile"/>
+        <TextView
+            android:id="@+id/btnEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EDIT PROFILE"
+            android:fontFamily="@font/quicksand_medium"
+            android:textSize="@dimen/_12sdp"
+            android:textAlignment="center"
+            android:layout_alignParentBottom="true"
+            android:padding="@dimen/_7sdp"
+            android:layout_gravity="bottom"
+            android:background="@color/colorWhite"
+            android:textColor="@color/colorDarkGray"/>
+    </RelativeLayout>
+</layout>

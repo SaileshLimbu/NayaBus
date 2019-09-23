@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "757416196400",
+    "firebase_url": "https://naya-bus.firebaseio.com",
+    "project_id": "naya-bus",
+    "storage_bucket": "naya-bus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757416196400:android:60b74fce14def1d6",
+        "android_client_info": {
+          "package_name": "np.com.nayabus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "757416196400-5kifkqs7lftv5jml8k7oeu0t2kqhr46e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm4rlSxqxQ86L0TO6RJkDLslT3CSavfww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "757416196400-5kifkqs7lftv5jml8k7oeu0t2kqhr46e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
