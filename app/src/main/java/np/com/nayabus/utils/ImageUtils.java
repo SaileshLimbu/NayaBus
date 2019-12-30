@@ -27,4 +27,10 @@ public class ImageUtils {
     public Bitmap convertByteToBitmap(Context context, byte[] byteArray) {
         return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
     }
+
+    public static Bitmap resizeMapIcons(Context context, int icon, int width, int height) {
+        Bitmap imageBitmap = BitmapFactory.decodeResource(context.getResources(), icon);
+        Bitmap resizedBitmap = Bitmap.createScaledBitmap(imageBitmap, width, height, false);
+        return resizedBitmap;
+    }
 }

@@ -9,5 +9,7 @@
     <color name="colorGray">#777</color>
     <color name="colorYellow">#FFEB3B</color>
     <color name="colorGreen">#008000</color>
+    <color name="colorParrot">#24CC24</color>
     <color name="colorRed">#FF0000</color>
+    <color name="colorTransparent">#00000000</color>
 </resources>

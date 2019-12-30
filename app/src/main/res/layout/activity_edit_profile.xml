@@ -60,7 +60,6 @@
                 android:paddingLeft="@dimen/_5sdp"
                 android:textSize="@dimen/_9sdp" />
 
-
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_35sdp"

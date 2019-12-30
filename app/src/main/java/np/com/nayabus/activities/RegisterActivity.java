@@ -64,11 +64,14 @@ public class RegisterActivity extends AppCompatActivity {
             if (task.isSuccessful()) {
                 auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(task1 -> {
                     if (task1.isSuccessful()) {
-                        database.child(auth.getCurrentUser().getUid()).setValue(new User(email, fullName, phoneNumber, 0)).addOnCompleteListener(task2 -> {
+                        database.child(auth.getCurrentUser().getUid()).setValue(new User(email, fullName, phoneNumber, 0))
+                                .addOnCompleteListener(task2 -> {
                             if (task2.isSuccessful()) {
-                                DialogUtils.showSuccessDialog(RegisterActivity.this, "Success!!!", "Please check your email to verify your account.");
+                                DialogUtils.showSuccessDialog(RegisterActivity.this, "Success!!!",
+                                        "Please check your email to verify your account.");
                             } else {
-                                DialogUtils.showFailedDialog(RegisterActivity.this, "Failed!!!", task2.getException().getMessage());
+                                DialogUtils.showFailedDialog(RegisterActivity.this, "Failed!!!",
+                                        task2.getException().getMessage());
                             }
                         });
                     } else {

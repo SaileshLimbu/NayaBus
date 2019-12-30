@@ -13,6 +13,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import np.com.nayabus.utils.DialogUtils;
 import np.com.nayabus.R;
+import np.com.nayabus.utils.SharedUtils;
+import np.com.nayabus.utils.SharedValue;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         btnLogin.setOnClickListener(view -> loginUser());
+
+        SharedUtils.setBoolean(this, SharedValue.isTripStarted, false);
     }
 
     private void loginUser() {
@@ -53,7 +57,8 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
                 } else {
-                    DialogUtils.showFailedDialog(LoginActivity.this, "Failed!!!", "Please verify your account before login.");
+                    DialogUtils.showFailedDialog(LoginActivity.this, "Failed!!!",
+                            "Please verify your account before login.");
                 }
                 dialog.dismiss();
             } else {
